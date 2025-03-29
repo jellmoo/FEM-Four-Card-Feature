@@ -34,11 +34,11 @@ table {
 body {
   font-family: "Poppins", sans-serif;
   color: rgb(77, 79, 98);
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding: 2rem;
 }
 
-.container {
+.feature-section {
   display: grid;
   grid-template-rows: auto 1fr 1fr 1fr 1fr;
   grid-template-areas: "header" "supervisor" "team-builder" "karma" "calculator";
@@ -47,31 +47,29 @@ body {
   max-width: 315px;
   margin: 0 auto;
 }
-
-.header {
+.feature-section__header {
   grid-area: header;
   text-align: center;
   margin-bottom: 1.75rem;
 }
-.header h2 {
+.feature-section__header-subtitle {
   font-size: 24px;
   line-height: 140%;
   font-weight: 200;
   letter-spacing: 0.25px;
 }
-.header h1 {
+.feature-section__header-title {
   font-size: 24px;
   line-height: 140%;
   font-weight: 600;
   letter-spacing: 0.25px;
   margin-bottom: 16px;
 }
-.header p {
+.feature-section__header-description {
   font-size: 15px;
   line-height: 140%;
 }
-
-.card {
+.feature-section__card {
   height: 250px;
   display: flex;
   flex-direction: column;
@@ -79,40 +77,36 @@ body {
   border-radius: 0.5rem;
   box-shadow: 0px 10px 15px 2px rgba(131, 166, 210, 0.25);
 }
-.card h3 {
+.feature-section__card-title {
   font-size: 1.25rem;
   line-height: 135%;
   font-weight: 600;
   margin-bottom: 0.375rem;
 }
-.card p {
+.feature-section__card-description {
   font-size: 0.8125rem;
   line-height: 160%;
   font-weight: 400;
   margin-bottom: 2rem;
   color: rgb(106, 113, 120);
 }
-.card figure {
+.feature-section__card-icon {
   display: flex;
   justify-content: flex-end;
 }
-
-.supervisor {
+.feature-section__card--supervisor {
   grid-area: supervisor;
   border-top: 0.25rem solid rgb(68, 211, 210);
 }
-
-.team-builder {
+.feature-section__card--team-builder {
   grid-area: team-builder;
   border-top: 0.25rem solid rgb(234, 84, 84);
 }
-
-.karma {
+.feature-section__card--karma {
   grid-area: karma;
   border-top: 0.25rem solid rgb(252, 174, 74);
 }
-
-.calculator {
+.feature-section__card--calculator {
   grid-area: calculator;
   border-top: 0.25rem solid rgb(84, 158, 242);
 }
@@ -122,86 +116,56 @@ body {
 }
 
 @media (min-width: 768px) {
-  .container {
+  .feature-section {
     max-width: 660px;
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto auto auto;
-    grid-template-areas: "header header" "supervisor supervisor " "team-builder karma" "calculator calculator";
+    grid-template-areas: "header header" "supervisor supervisor" "team-builder karma" "calculator calculator";
   }
-  .header {
-    grid-area: header;
-    text-align: center;
+  .feature-section__header {
     width: 540px;
     justify-self: center;
-    margin-bottom: 2.625rem;
+    margin-bottom: 42px;
   }
-  .header h2 {
+  .feature-section__header-subtitle {
     font-size: 2.25rem;
     line-height: 140%;
     letter-spacing: 0.25px;
     font-weight: 200;
   }
-  .header h1 {
+  .feature-section__header-title {
     font-size: 2.25rem;
     line-height: 140%;
     letter-spacing: 0.25px;
     font-weight: 600;
   }
-  .header p {
+  .feature-section__header-description {
     font-size: 0.9375rem;
     line-height: 140%;
     font-weight: 400;
   }
-  .card {
+  .feature-section__card {
     width: 314px;
   }
-  .supervisor {
-    grid-area: supervisor;
+  .feature-section__card--supervisor {
     justify-self: center;
   }
-  .team-builder {
-    grid-area: team-builder;
-  }
-  .karma {
-    grid-area: karma;
-  }
-  .calculator {
-    grid-area: calculator;
+  .feature-section__card--calculator {
     justify-self: center;
   }
 }
 @media (min-width: 1440px) {
-  body {
-    padding: 150px;
-  }
-  .container {
+  .feature-section {
     max-width: 1100px;
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto 1fr 1fr;
+    grid-template-rows: auto;
     grid-template-areas: "header header header" "supervisor team-builder calculator" "supervisor karma calculator";
   }
-  .header {
-    grid-area: header;
-    text-align: center;
-  }
-  .card {
+  .feature-section__card {
     height: 280px;
     width: 100%;
   }
-  .supervisor {
-    grid-area: supervisor;
-    align-self: center;
-  }
-  .team-builder {
-    grid-area: team-builder;
-  }
-  .karma {
-    grid-area: karma;
-  }
-  .calculator {
-    grid-area: calculator;
+  .feature-section__card--supervisor, .feature-section__card--calculator {
     align-self: center;
   }
 }/*# sourceMappingURL=style.css.map */
