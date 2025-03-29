@@ -1,0 +1,106 @@
+// tablet view
+@media (min-width: 768px) {
+    .container {
+        max-width: 660px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: 
+            "header header"
+            "supervisor supervisor "
+            "team-builder karma"
+            "calculator calculator";
+    }
+
+    .header {
+        grid-area: header;
+        text-align: center;
+        width: 540px;
+        justify-self: center;
+        margin-bottom: 2.625rem;
+        
+        h2 {
+            @include text-2;
+        }
+
+        h1 {
+            @include text-1;
+        }
+
+        p {
+            @include text-4;
+        }
+    }
+
+    .card {
+        width: 314px;
+    }
+
+    .supervisor {
+        grid-area: supervisor;
+        justify-self: center;
+    }
+    
+    .team-builder {
+        grid-area: team-builder;
+    
+    }
+
+    .karma {
+        grid-area: karma;
+    
+    }
+
+    .calculator {
+        grid-area: calculator;
+        justify-self: center;
+    }
+}
+
+// desktop view
+@media (min-width: 1440px) {
+
+    body {
+        padding: 150px; // had trouble centering content for desktop so just using padding lol 
+    }
+
+    .container {
+        max-width: 1100px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto 1fr 1fr;
+        grid-template-areas: 
+            "header header header"
+            "supervisor team-builder calculator"
+            "supervisor karma calculator";
+    }
+
+    .header {
+        grid-area: header;
+        text-align: center;
+    }
+
+    .card {
+        height: 280px;
+        width: 100%;
+    }
+
+    .supervisor {
+        grid-area: supervisor;
+        align-self: center;
+        
+    }
+    
+    .team-builder {
+        grid-area: team-builder;
+    }
+
+    .karma {
+        grid-area: karma;
+    }
+
+    .calculator {
+        grid-area: calculator;
+        align-self: center;
+    }
+}
